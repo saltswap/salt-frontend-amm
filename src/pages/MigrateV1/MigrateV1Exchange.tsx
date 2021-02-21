@@ -22,7 +22,7 @@ import { NEVER_RELOAD, useSingleCallResult } from '../../state/multicall/hooks'
 import { useIsTransactionPending, useTransactionAdder } from '../../state/transactions/hooks'
 import { useETHBalances, useTokenBalance } from '../../state/wallet/hooks'
 import { BackArrow, ExternalLink, TYPE } from '../../components/Shared'
-import { getEtherscanLink, isAddress } from '../../utils'
+import { getBscScanLink, isAddress } from '../../utils'
 import { BodyWrapper } from '../AppBody'
 import { EmptyState } from './EmptyState'
 
@@ -191,7 +191,7 @@ function V1PairMigration({ liquidityTokenAmount, token }: { liquidityTokenAmount
         This tool will safely migrate your V1 liquidity to V2 with minimal price risk. The process is completely
         trustless thanks to the{' '}
         {chainId && (
-          <ExternalLink href={getEtherscanLink(chainId, MIGRATOR_ADDRESS, 'address')}>
+          <ExternalLink href={getBscScanLink(chainId, MIGRATOR_ADDRESS, 'address')}>
             <Blue display="inline">Uniswap migration contract↗</Blue>
           </ExternalLink>
         )}

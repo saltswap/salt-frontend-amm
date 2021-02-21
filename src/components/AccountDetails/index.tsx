@@ -6,7 +6,7 @@ import { ExternalLink as LinkIcon } from 'react-feather'
 import { useActiveWeb3React } from '../../hooks'
 import { AppDispatch } from '../../state'
 import { clearAllTransactions } from '../../state/transactions/actions'
-import { shortenAddress, getEtherscanLink } from '../../utils'
+import { shortenAddress, getBscScanLink } from '../../utils'
 import { AutoRow } from '../Row'
 import Copy from './Copy'
 import Transaction from './Transaction'
@@ -213,10 +213,10 @@ const MainWalletAction = styled(WalletAction)`
 function renderTransactions(transactions: string[]) {
   return (
     <TransactionListWrapper>
-      {transactions.map((hash, i) => 
+      {transactions.map((hash, i) => (
         // eslint-disable-next-line react/no-array-index-key
-         <Transaction key={i} hash={hash} />
-      )}
+        <Transaction key={i} hash={hash} />
+      ))}
     </TransactionListWrapper>
   )
 }
@@ -370,7 +370,7 @@ export default function AccountDetails({
                           <AddressLink
                             hasENS={!!ENSName}
                             isENS
-                            href={chainId && getEtherscanLink(chainId, ENSName, 'address')}
+                            href={chainId && getBscScanLink(chainId, ENSName, 'address')}
                           >
                             <LinkIcon size={16} />
                             <span style={{ marginLeft: '4px' }}>View on bscscan</span>
@@ -392,7 +392,7 @@ export default function AccountDetails({
                           <AddressLink
                             hasENS={!!ENSName}
                             isENS={false}
-                            href={getEtherscanLink(chainId, account, 'address')}
+                            href={getBscScanLink(chainId, account, 'address')}
                           >
                             <LinkIcon size={16} />
                             <span style={{ marginLeft: '4px' }}>View on bscscan</span>

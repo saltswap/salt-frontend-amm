@@ -38,3 +38,5 @@ cypress/fixtures/example.json
 
 .eslintcache
 /.github/
+
+.envrc
