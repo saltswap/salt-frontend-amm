@@ -13,15 +13,15 @@
     {
       "name": "Salt Token",
       "symbol": "SALT",
-      "address": "0x89dcddca577f3658a451775d58ea99da532263c8",
-      "chainId": 97,
+      "address": "0x2849b1aE7E04A3D9Bc288673A92477CF63F28aF4",
+      "chainId": 56,
       "decimals": 18
     },
     {
-      "name": "Goose Golden Egg",
-      "symbol": "EGG",
-      "address": "0xF952Fc3ca7325Cc27D15885d37117676d25BfdA6",
-      "chainId": 56,
+      "name": "Salt Token",
+      "symbol": "SALT",
+      "address": "0x89dcddca577f3658a451775d58ea99da532263c8",
+      "chainId": 97,
       "decimals": 18
     },
     {
@@ -78,6 +78,14 @@
       "chainId": 56,
       "decimals": 18,
       "logoURI": "/images/coins/ETH.png"
+    },
+    {
+      "name": "Binance Beacon ETH",
+      "symbol": "BETH",
+      "address": "0x250632378e573c6be1ac2f97fcdf00515d0aa91b",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/coins/BETH.png"
     },
     {
       "name": "BTCB Token",

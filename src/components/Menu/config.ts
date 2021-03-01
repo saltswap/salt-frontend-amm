@@ -7,21 +7,14 @@ const config: MenuEntry[] = [
     href: 'https://www.saltswap.finance'
   },
   {
-    label: 'Trade',
-    icon: 'TradeIcon',
-    initialOpenState: true,
-    items: [
-      {
-        label: 'Exchange',
-        href: '/swap',
-        icon: "ExchangeIcon"
-      },
-      {
-        label: 'Liquidity',
-        href: '/pool',
-        icon: 'LiquidityIcon'
-      }
-    ]
+    label: 'Exchange',
+    href: '/swap',
+    icon: "ExchangeIcon"
+  },
+  {
+    label: 'Liquidity',
+    href: '/pool',
+    icon: 'LiquidityIcon'
   },
   {
     label: 'Farms',
@@ -29,9 +22,29 @@ const config: MenuEntry[] = [
     href: 'https://www.saltswap.finance/farms'
   },
   {
-    label: 'Salty Pools',
+    label: 'Pools',
     icon: 'PoolIcon',
     href: 'https://www.saltswap.finance/pools'
+  },
+  {
+    label: 'Oceans 🆕',
+    icon: 'WaveIcon',
+    href: 'https://www.saltswap.finance/oceans'
+  },
+  {
+    label: 'Audit By Certik in progress...',
+    icon: 'AuditIcon',
+    href: '/',
+  },
+  {
+    label: 'Listings',
+    icon: 'ListingIcon',
+    items: [
+      {
+        label: 'DappRadar',
+        href: 'https://dappradar.com/binance-smart-chain/defi/saltswap',
+      },
+    ],
   },
   // {
   //   label: 'Lottery',
