@@ -40,6 +40,14 @@
       "decimals": 18
     },
     {
+      "name": "Slime",
+      "symbol": "SLME",
+      "address": "0x4fCfA6cC8914ab455B5b33Df916d90BFe70b6AB1",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/coins/SLIME.png"
+    },
+    {
       "name": "LP3 Token",
       "symbol": "LP3",
       "address": "0xe70b7523f4bffa1f2e88d2ba709afd026030f412",
