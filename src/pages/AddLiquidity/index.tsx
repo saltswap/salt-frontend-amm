@@ -92,17 +92,17 @@ export default function AddLiquidity({
   // get the max amounts user can add
   const maxAmounts: { [field in Field]?: TokenAmount } = [Field.CURRENCY_A, Field.CURRENCY_B].reduce(
     (accumulator, field) => ({
-        ...accumulator,
-        [field]: maxAmountSpend(currencyBalances[field]),
-      }),
+      ...accumulator,
+      [field]: maxAmountSpend(currencyBalances[field]),
+    }),
     {}
   )
 
   const atMaxAmounts: { [field in Field]?: TokenAmount } = [Field.CURRENCY_A, Field.CURRENCY_B].reduce(
     (accumulator, field) => ({
-        ...accumulator,
-        [field]: maxAmounts[field]?.equalTo(parsedAmounts[field] ?? '0'),
-      }),
+      ...accumulator,
+      [field]: maxAmounts[field]?.equalTo(parsedAmounts[field] ?? '0'),
+    }),
     {}
   )
 
@@ -189,7 +189,8 @@ export default function AddLiquidity({
       })
   }
 
-  const modalHeader = () => noLiquidity ? (
+  const modalHeader = () =>
+    noLiquidity ? (
       <AutoColumn gap="20px">
         <LightCard mt="20px" borderRadius="20px">
           <RowFlat>
@@ -230,15 +231,15 @@ export default function AddLiquidity({
     )
 
   const modalBottom = () => (
-      <ConfirmAddModalBottom
-        price={price}
-        currencies={currencies}
-        parsedAmounts={parsedAmounts}
-        noLiquidity={noLiquidity}
-        onAdd={onAdd}
-        poolTokenPercentage={poolTokenPercentage}
-      />
-    )
+    <ConfirmAddModalBottom
+      price={price}
+      currencies={currencies}
+      parsedAmounts={parsedAmounts}
+      noLiquidity={noLiquidity}
+      onAdd={onAdd}
+      poolTokenPercentage={poolTokenPercentage}
+    />
+  )
 
   const pendingText = `Supplying ${parsedAmounts[Field.CURRENCY_A]?.toSignificant(6)} ${
     currencies[Field.CURRENCY_A]?.symbol
@@ -321,6 +322,7 @@ export default function AddLiquidity({
                   onFieldAInput(maxAmounts[Field.CURRENCY_A]?.toExact() ?? '')
                 }}
                 onCurrencySelect={handleCurrencyASelect}
+                showHalfButton={false}
                 showMaxButton={!atMaxAmounts[Field.CURRENCY_A]}
                 currency={currencies[Field.CURRENCY_A]}
                 id="add-liquidity-input-tokena"
@@ -337,6 +339,7 @@ export default function AddLiquidity({
                   onFieldBInput(maxAmounts[Field.CURRENCY_B]?.toExact() ?? '')
                 }}
                 showMaxButton={!atMaxAmounts[Field.CURRENCY_B]}
+                showHalfButton={false}
                 currency={currencies[Field.CURRENCY_B]}
                 id="add-liquidity-input-tokenb"
                 showCommonBases={false}

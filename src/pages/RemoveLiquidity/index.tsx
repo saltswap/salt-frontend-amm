@@ -570,6 +570,7 @@ export default function RemoveLiquidity({
                       onUserInput(Field.LIQUIDITY_PERCENT, '100')
                     }}
                     showMaxButton={!atMaxAmount}
+                    showHalfButton={false}
                     disableCurrencySelect
                     currency={pair?.liquidityToken}
                     pair={pair}
@@ -584,6 +585,7 @@ export default function RemoveLiquidity({
                     onUserInput={onCurrencyAInput}
                     onMax={() => onUserInput(Field.LIQUIDITY_PERCENT, '100')}
                     showMaxButton={!atMaxAmount}
+                    showHalfButton={false}
                     currency={currencyA}
                     label="Output"
                     onCurrencySelect={handleSelectCurrencyA}
@@ -598,6 +600,7 @@ export default function RemoveLiquidity({
                     onUserInput={onCurrencyBInput}
                     onMax={() => onUserInput(Field.LIQUIDITY_PERCENT, '100')}
                     showMaxButton={!atMaxAmount}
+                    showHalfButton={false}
                     currency={currencyB}
                     label="Output"
                     onCurrencySelect={handleSelectCurrencyB}

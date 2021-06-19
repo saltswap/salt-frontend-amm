@@ -271,6 +271,13 @@ const Swap = () => {
     }
   }, [maxAmountInput, onUserInput])
 
+  const handleHalfInput = useCallback(() => {
+    if (maxAmountInput) {
+      const halfAmount = maxAmountInput.divide(JSBI.BigInt(2))
+      onUserInput(Field.INPUT, halfAmount.toSignificant(6))
+    }
+  }, [maxAmountInput, onUserInput])
+
   const handleOutputSelect = useCallback(
     (outputCurrency) => {
       onCurrencySelection(Field.OUTPUT, outputCurrency)
@@ -320,9 +327,11 @@ const Swap = () => {
                 }
                 value={formattedAmounts[Field.INPUT]}
                 showMaxButton={!atMaxAmountInput}
+                showHalfButton
                 currency={currencies[Field.INPUT]}
                 onUserInput={handleTypeInput}
                 onMax={handleMaxInput}
+                onHalf={handleHalfInput}
                 onCurrencySelect={handleInputSelect}
                 otherCurrency={currencies[Field.OUTPUT]}
                 id="swap-currency-input"
@@ -356,6 +365,7 @@ const Swap = () => {
                   independentField === Field.INPUT && !showWrap && trade ? 'To (estimated)' : TranslateString(80, 'To')
                 }
                 showMaxButton={false}
+                showHalfButton={false}
                 currency={currencies[Field.OUTPUT]}
                 onCurrencySelect={handleOutputSelect}
                 otherCurrency={currencies[Field.INPUT]}
